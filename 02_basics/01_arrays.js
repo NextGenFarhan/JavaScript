@@ -15,6 +15,7 @@ let arr =  [1, 3, 7, 9];
 // SOME METHODS 
 // console.log(arr.length);
 // console.log(typeof(arr))
+// console.log(arr.sort())
 // console.log(arr.toString());
 // console.log(arr.join(" and "))                                           // beech me and aajayenge aur string me convert kr dega 
 /* shift, pop, unshift and push */
