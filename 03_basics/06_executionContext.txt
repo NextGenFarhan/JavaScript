@@ -1,0 +1,140 @@
+                JAVASCRIPT EXECUTION CONTEXT
+
+
+{}  -> Global Execution Context
+      (Browser me -> window object)
+
+JavaScript me 3 type ke Execution Context hote hain:
+
+1. Global Execution Context (GEC)
+2. Function Execution Context (FEC)
+3. Eval Execution Context (rarely used)
+
+--------------------------------
+Program do phases me run hota hai
+--------------------------------
+
+1) Memory Creation Phase (Creation Phase)
+2) Execution Phase
+
+--------------------------------
+Example Code
+--------------------------------
+
+let val1 = 10;
+let val2 = 5;
+
+function addNum(num1, num2) {
+    let total = num1 + num2;
+    return total;
+}
+
+let result1 = addNum(val1, val2);
+let result2 = addNum(10, 2);
+
+================================
+1) GLOBAL EXECUTION CONTEXT (GEC)
+================================
+
+-> Sabse pehle Global Execution Context create hota hai
+-> Ye call stack ke bottom me hota hai
+
+--------------------------------
+Memory Creation Phase (Global)
+--------------------------------
+
+Note:
+- let / const -> hoist hote hain but UNINITIALIZED hote hain (TDZ)
+- function -> pura definition memory me chala jata hai
+
+val1      -> uninitialized (TDZ)
+val2      -> uninitialized (TDZ)
+addNum    -> function definition
+result1  -> uninitialized (TDZ)
+result2  -> uninitialized (TDZ)
+
+--------------------------------
+Execution Phase (Global)
+--------------------------------
+
+val1 = 10
+val2 = 5
+
+result1 = addNum(val1, val2)
+-> yahan FUNCTION EXECUTION CONTEXT create hota hai
+
+================================
+2) FUNCTION EXECUTION CONTEXT
+   (addNum)
+================================
+
+Har function call par:
+-> New Variable Environment (NVE)
+-> New Execution Thread
+-> New Function Execution Context
+
+--------------------------------
+Memory Creation Phase (Function)
+--------------------------------
+
+num1   -> undefined
+num2   -> undefined
+total  -> uninitialized (TDZ)
+
+--------------------------------
+Execution Phase (Function)
+--------------------------------
+
+num1 = 10
+num2 = 5
+total = 15
+
+return total
+-> total value Global Execution Context ko return ho jati hai
+
+result1 = 15
+
+--------------------------------
+Second Function Call
+--------------------------------
+
+result2 = addNum(10, 2)
+
+num1 = 10
+num2 = 2
+total = 12
+
+return total
+result2 = 12
+
+================================
+CALL STACK (LIFO)
+================================
+
+Last In First Out principle follow hota hai
+
+|-----------------------|
+| addNum(10, 2)         |
+|-----------------------|
+| addNum(val1, val2)    |
+|-----------------------|
+| Global Execution      |
+|-----------------------|
+
+-> Function complete hone par
+-> Uska Execution Context stack se pop ho jata hai
+
+================================
+IMPORTANT POINTS (INTERVIEW)
+================================
+
+✔ JavaScript is Single Threaded
+✔ Har Execution Context ke 2 phases hote hain
+✔ Function call = New Execution Context
+✔ Call Stack execution manage karta hai
+✔ let/const -> Temporal Dead Zone (TDZ)
+✔ function declarations fully hoisted hoti hain
+
+================================
+END
+================================
