@@ -27,3 +27,6 @@ switch(month) {
         console.log("default case match")
         break;
 }
+
+
+// 2 keyword brea and continue
