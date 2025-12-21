@@ -12,8 +12,13 @@ map.set('IN', "bharat")          // but change ho skti hai value
 
 // forof
 for (const key of map) {
-    // console.log(key)
+    console.log(key)
 }
 for (const [key, value] of map) {
-    console.log(`${key} :- ${value}`)
+    // console.log(`${key} :- ${value}`)
+}
+
+// forin 
+for (const key in map) {            // map is not ietrable here in forin loop
+    // console.log(map)             // ***
 }
