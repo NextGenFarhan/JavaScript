@@ -24,6 +24,9 @@ let user2 = () => {
     console.log(this);
 }
 // user2()
-const addTwo = (num1, num2) => (num1+num2);
+
+// ek kaam krne ke 3 tarike look at the bracket syntax
+// const addTwo = (num1, num2) => (num1+num2);
+// const addTwo = (num1, num2) => {return num1+num2};
+const addTwo = (num1, num2) => ({username: "Farhan"});          // object ban gya
 console.log(addTwo(2, 5))
-const addTwoo = (num1, num2) => ({username: "Farhan"});
