@@ -10,10 +10,14 @@ Topics Covered:
 1. variables, datatypes, conversions, operators, Strings, Numbers and maths etc
 2. Arrays, Objects.
 3. Funcitons, scope, arrow Function, iife and  execution context
-4. The contro flow is there 
+4. The control flow is there 
     It includes ifelse, switch case, truthy or falsy values.
 5. Iterations
     It has for-loop, while-loop and all
+6. Various DOM concepts and events in js are added here
+7. has 6 mini projects based on basic dom and events concepts
+7. has oops concepts also like (objects, classes, constructor and inheritance)
+
 
 
 
